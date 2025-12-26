@@ -1,7 +1,8 @@
 import PageHeader from "@/components/layout/PageHeader";
 import { BebasNeueFont, InterFont } from "@/lib/font";
 import Image from "next/image";
-import HistoryTimeline from "@/components/history/HistoryTimeline";
+import HistoryTimeline from "@/components/about/HistoryTimeline";
+import Member from "@/components/about/Member";
 
 export default function About() {
     return (
@@ -53,15 +54,15 @@ export default function About() {
             {/* History Timeline Section */}
             <HistoryTimeline />
 
-            {/* Board of Members Section */}
-            <section className="w-full py-12 md:py-16 lg:py-20">
-                <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
-                    <h2 className={`${BebasNeueFont.className} text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-wide mb-6`}>
-                        BOARD OF MEMBERS
+            {/* Mission Statement */}
+            <section className="w-full py-12 md:py-16 lg:py-20 hidden">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+                    <h2 className={`${BebasNeueFont.className} text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-primary) tracking-wide`}>
+                        Our Board Members
                     </h2>
-                    <p className={`${InterFont.className} text-base md:text-lg leading-relaxed text-gray-700`}>
-                        The Asian Coalition of Tallahassee is a non-profit organization that promotes the culture and history of Asia.
-                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <Member name="John Doe" position="President" image="/images/member.jpg" imageAlt="John Doe" description="John Doe is the president of the Asian Coalition of Tallahassee." />
+                    </div>
                 </div>
             </section>
         </main>
