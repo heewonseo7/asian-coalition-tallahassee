@@ -74,23 +74,28 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
   return (
     <div className="relative">
       {/* Desktop Layout */}
-      <div className="hidden md:grid md:grid-cols-2 md:gap-16 items-center">
-        {/* Left Content */}
-        <div className={`${!isLeft ? 'block' : 'hidden'}`}>
-          <TimelineContent
-            item={item}
-            descriptionArray={descriptionArray}
-            align="left"
-          />
-        </div>
+      <div className="hidden md:block">
+        <div className={`max-w-md ${isLeft ? 'ml-auto pr-24' : 'mr-auto pl-24'}`}>
+          {/* Year above dotted line */}
+          <div className={`mb-6 ${isLeft ? 'text-right' : 'text-left'}`}>
+            <div
+              className={`${BebasNeueFont.className} text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-linear-to-r from-yellow-400 via-orange-500 to-rose-500 tracking-wide`}
+            >
+              {item.year}
+            </div>
+          </div>
 
-        {/* Right Content */}
-        <div className={`${isLeft ? 'block' : 'hidden'}`}>
-          <TimelineContent
-            item={item}
-            descriptionArray={descriptionArray}
-            align="right"
-          />
+          {/* Title and description below dotted line */}
+          <div className={`mt-6 ${isLeft ? 'text-right' : 'text-left'}`}>
+            <h3 className={`${BebasNeueFont.className} text-2xl md:text-3xl font-bold text-white tracking-wide mb-3`}>
+              {item.title}
+            </h3>
+            <div className={`${InterFont.className} space-y-2 text-sm md:text-base leading-relaxed text-gray-300`}>
+              {descriptionArray.map((desc, idx) => (
+                <p key={idx}>{desc}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
