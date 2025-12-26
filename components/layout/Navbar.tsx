@@ -40,7 +40,7 @@ export default function Navbar() {
             aria-controls="site-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             onClick={() => setIsOpen((v) => !v)}
-            className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-2 md:px-5 md:py-3 text-white tracking-wide ${CharlottenburgFont.className}`}
+            className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-2 md:px-5 md:py-3 text-white tracking-wide cursor-pointer ${CharlottenburgFont.className}`}
             >
             <AnimatePresence mode="wait" initial={false}>
                 <motion.span
