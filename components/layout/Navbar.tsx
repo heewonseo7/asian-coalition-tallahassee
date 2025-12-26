@@ -89,6 +89,7 @@ export default function Navbar() {
                     >
                         <Link
                         href={link.href}
+                        onClick={() => setIsOpen(false)}
                         className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-wide ${CharlottenburgFont.className}`}
                         >
                         {link.name.toUpperCase()}

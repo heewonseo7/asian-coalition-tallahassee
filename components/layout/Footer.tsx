@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { InterFont } from "@/lib/font";
@@ -43,7 +41,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className={`w-full bg-foreground text-background ${InterFont.className}`}>
+        <footer className={`w-full bg-foreground text-background mt-auto ${InterFont.className}`}>
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
                 <div className="py-12 md:py-16 border-b border-white/20">
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6 lg:gap-8">

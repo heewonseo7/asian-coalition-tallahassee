@@ -8,7 +8,7 @@ import { BebasNeueFont } from "@/lib/font";
 export default function GetInvolved() {
     const cards = [
         { 
-            name: "VOLUNTEER", 
+            name: "VOLUNTEERING", 
             image: "/images/volunteer.png", 
             href: "/get-involved/volunteer" 
         },
