@@ -72,7 +72,7 @@ interface TimelineRowProps {
 
 function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
   // Fixed anchor point for lantern and connectors - aligned with year baseline
-  const ANCHOR_TOP = "6rem"; // Aligns with year position
+  const ANCHOR_TOP = "6.5rem"; // Aligns with year position
 
   return (
     <div className="relative min-h-48">
@@ -169,7 +169,7 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
       <div
         className={`absolute z-20 ${
           isLeft ? 'md:right-0' : 'md:left-0'
-        } left-20 md:left-auto`}
+        }`}
         style={{ top: `calc(${ANCHOR_TOP} + 1rem)` }}
       >
         <motion.div
@@ -179,13 +179,13 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg shadow-orange-500/50">
+          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-backgroundflex items-center justify-center">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center">
               <Image
                 src={getZodiacImage(item.zodiac)}
                 alt={`${item.zodiac} zodiac`}
-                width={32}
-                height={32}
+                width={50}
+                height={50}
                 className="object-contain p-0.5"
               />
             </div>
