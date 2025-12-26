@@ -71,8 +71,11 @@ interface TimelineRowProps {
 }
 
 function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
+  // Fixed anchor point for lantern and connectors - aligned with year baseline
+  const ANCHOR_TOP = "6rem"; // Aligns with year position
+
   return (
-    <div className="relative">
+    <div className="relative min-h-48">
       {/* Desktop Layout */}
       <div className="hidden md:block">
         <div className={`max-w-md ${isLeft ? 'ml-auto pr-24' : 'mr-auto pl-24'}`}>
@@ -108,8 +111,11 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
         />
       </div>
 
-      {/* Central Node - Lantern on spine */}
-      <div className="absolute left-8 md:left-1/2 top-1/2 -translate-y-1/2 md:-translate-x-1/2 z-20">
+      {/* Central Node - Lantern on spine at fixed anchor */}
+      <div
+        className="absolute left-8 md:left-1/2 md:-translate-x-1/2 z-20"
+        style={{ top: ANCHOR_TOP }}
+      >
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -129,9 +135,9 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
         </motion.div>
       </div>
 
-      {/* Horizontal Dotted Line connecting to Zodiac - Desktop */}
+      {/* Horizontal Dotted Line connecting to Zodiac - Desktop at fixed anchor */}
       <motion.div
-        className={`hidden md:block absolute top-1/2 -translate-y-1/2 h-0.5 border-t-2 border-dashed border-white/40 z-10 ${
+        className={`hidden md:block absolute h-0.5 border-t-2 border-dashed border-white/40 z-10 ${
           isLeft ? 'left-1/2 ml-8' : 'right-1/2 mr-8'
         }`}
         initial={{ scaleX: 0 }}
@@ -139,6 +145,7 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         style={{
+          top: `calc(${ANCHOR_TOP} + 2rem)`,
           width: 'calc(50% - 7rem)',
           transformOrigin: isLeft ? 'left' : 'right',
         }}
@@ -146,23 +153,25 @@ function TimelineRow({ item, isLeft, descriptionArray }: TimelineRowProps) {
 
       {/* Horizontal Dotted Line - Mobile */}
       <motion.div
-        className="md:hidden absolute left-14 top-1/2 -translate-y-1/2 h-0.5 border-t-2 border-dashed border-white/40 z-10"
+        className="md:hidden absolute left-14 h-0.5 border-t-2 border-dashed border-white/40 z-10"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         style={{
+          top: `calc(${ANCHOR_TOP} + 1.5rem)`,
           width: '3rem',
           transformOrigin: 'left',
         }}
       />
 
-      {/* Zodiac Icon at end of dotted line */}
-      <div className={`absolute top-1/2 -translate-y-1/2 z-20 ${
-        isLeft
-          ? 'md:right-0'
-          : 'md:left-0'
-      }`}>
+      {/* Zodiac Icon at end of dotted line at fixed anchor */}
+      <div
+        className={`absolute z-20 ${
+          isLeft ? 'md:right-0' : 'md:left-0'
+        } left-20 md:left-auto`}
+        style={{ top: `calc(${ANCHOR_TOP} + 1rem)` }}
+      >
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5 }}
