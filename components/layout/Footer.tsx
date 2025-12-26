@@ -94,7 +94,7 @@ export default function Footer() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             aria-label={link.name}
-                                            className="flex items-center justify-center text-white/80 border-2 border-white p-3 transition-all hover:bg-white hover:text-(--color-primary) hover:scale-110"
+                                            className="flex items-center justify-center text-white/80 border-2 border-white/30 p-3 transition-all hover:bg-white hover:text-(--color-primary) hover:scale-110"
                                         >
                                             <FontAwesomeIcon icon={link.icon} className="w-6 h-6" />
                                         </Link>
