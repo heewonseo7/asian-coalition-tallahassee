@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CharlottenburgFont, BebasNeueFont  } from "@/lib/font";
+import { BebasNeueFont  } from "@/lib/font";
 import { faInstagram, faTwitter, faYoutube, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,7 +28,7 @@ export default function Hero() {
             />
             
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/65" />
             
             {/* Hero Content */}
             <div className="relative z-10 flex h-full flex-col items-start justify-center px-6 md:px-12 lg:px-20 pt-32 md:pt-40 lg:pt-20">

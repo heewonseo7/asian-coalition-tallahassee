@@ -11,6 +11,7 @@
   --color-foreground: var(--foreground);
   --font-charlottenburg: var(--font-charlottenburg), ui-sans-serif, system-ui, sans-serif;
   --font-bebas-neue: var(--font-bebas-neue), ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
