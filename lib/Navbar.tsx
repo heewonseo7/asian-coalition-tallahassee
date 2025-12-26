@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Charlottenburg } from "@/lib/font";
+import { CharlottenburgFont } from "@/lib/font";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ export default function Navbar() {
 
     return (
         <>
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 md:p-6">
+        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 md:py-6 lg:px-16">
             <Link href="/" aria-label="Home" className="relative h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24">
             <Image
                 src="/logo.png"
@@ -40,7 +40,7 @@ export default function Navbar() {
             aria-controls="site-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             onClick={() => setIsOpen((v) => !v)}
-            className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-2 md:px-5 md:py-3 text-white tracking-wide ${Charlottenburg.className}`}
+            className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-3 py-2 md:px-5 md:py-3 text-white tracking-wide ${CharlottenburgFont.className}`}
             >
             <AnimatePresence mode="wait" initial={false}>
                 <motion.span
@@ -89,7 +89,7 @@ export default function Navbar() {
                     >
                         <Link
                         href={link.href}
-                        className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-wide ${Charlottenburg.className}`}
+                        className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-wide ${CharlottenburgFont.className}`}
                         >
                         {link.name.toUpperCase()}
                         </Link>
