@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BebasNeueFont } from "@/lib/font";
+import { BebasNeueFont, InterFont } from "@/lib/font";
 
 export default function GetInvolved() {
     const cards = [
@@ -49,13 +49,12 @@ export default function GetInvolved() {
     return (
         <section className="w-full px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <div className="max-w-4xl mx-auto text-center mb-12">
-                <h2 className={`${BebasNeueFont.className} text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-4 tracking-wide`}>
+                <h2 className={`${BebasNeueFont.className} text-5xl md:text-6xl lg:text-7xl font-bold text-(--color-primary) mb-4 tracking-wide`}>
                     GET INVOLVED!
                 </h2>
-                <p className="text-lg md:text-xl text-black mb-6">
+                <p className={`${InterFont.className} text-lg md:text-xl text-black mb-6`}>
                     Whether by volunteering, performing, or vending, you too can be a part of our festival!
                 </p>
-                <div className="w-24 h-1 bg-(--color-primary) mx-auto"></div>
             </div>
 
             <div className="max-w-7xl mx-auto">

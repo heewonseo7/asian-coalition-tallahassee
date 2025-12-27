@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Hero />
       <GetInvolved />
-      {/* <Sponsors /> */}
+      <Sponsors />
     </main>
   );
 }

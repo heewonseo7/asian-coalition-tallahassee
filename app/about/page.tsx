@@ -1,8 +1,11 @@
+"use client";
+
 import PageHeader from "@/components/layout/PageHeader";
 import { BebasNeueFont, InterFont } from "@/lib/font";
 import Image from "next/image";
 import HistoryTimeline from "@/components/about/HistoryTimeline";
 import Member from "@/components/about/Member";
+import { motion } from "motion/react";
 
 export default function About() {
     return (
@@ -18,7 +21,13 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
                         {/* Text Content */}
-                        <div className="flex-1 space-y-6">
+                        <motion.div 
+                            className="flex-1 space-y-6"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <h2 className={`${BebasNeueFont.className} text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-primary) tracking-wide`}>
                                 OUR MISSION
                             </h2>
@@ -34,10 +43,16 @@ export default function About() {
                                     engagement, and cultural programming.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                         
                         {/* Image */}
-                        <div className="flex-1 w-full lg:w-auto">
+                        <motion.div 
+                            className="flex-1 w-full lg:w-auto"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             <div className="relative aspect-4/3 w-full max-w-lg mx-auto lg:max-w-none rounded-lg overflow-hidden shadow-lg">
                                 <Image 
                                     src="/images/mission.jpg" 
@@ -46,7 +61,7 @@ export default function About() {
                                     className="object-cover"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -54,12 +69,18 @@ export default function About() {
             {/* History Timeline Section */}
             <HistoryTimeline />
 
-            {/* Mission Statement */}
+            {/* Board Members Section */}
             <section className="w-full py-12 md:py-16 lg:py-20 hidden">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-                    <h2 className={`${BebasNeueFont.className} text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-primary) tracking-wide`}>
+                    <motion.h2 
+                        className={`${BebasNeueFont.className} text-4xl md:text-5xl lg:text-6xl font-bold text-(--color-primary) tracking-wide mb-8 md:mb-12`}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         Our Board Members
-                    </h2>
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <Member name="John Doe" position="President" image="/images/member.jpg" imageAlt="John Doe" description="John Doe is the president of the Asian Coalition of Tallahassee." />
                     </div>

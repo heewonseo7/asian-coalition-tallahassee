@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Bebas_Neue, Inter, Playfair_Display } from "next/font/google";
 
 export const CharlottenburgFont = localFont({
     src: [
@@ -24,5 +24,12 @@ export const InterFont = Inter({
     weight: "400",
     subsets: ["latin"],
     variable: "--font-inter",
+    display: "swap",
+});
+
+export const PlayfairDisplayFont = Playfair_Display({
+    weight: "400",
+    subsets: ["latin"],
+    variable: "--font-playfair-display",
     display: "swap",
 });

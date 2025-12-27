@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { InterFont } from "@/lib/font";
+import { motion } from "motion/react";
 
 type Member = {
     name: string;
@@ -19,7 +22,13 @@ export default function Member({
     origin
 }: Member) {
     return (
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-start mb-8 md:mb-12">
+        <motion.div 
+            className="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-start mb-8 md:mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
             {/* Image - Consistent sizing */}
             <div className="shrink-0 w-full md:w-64 lg:w-72">
                 <div className="relative aspect-4/3 w-full rounded-lg overflow-hidden bg-gray-100">
@@ -60,6 +69,6 @@ export default function Member({
                     </div>
                 )}
             </div>
-        </div>
+        </motion.div>
     );
 }
