@@ -1,5 +1,5 @@
 import Hero from "@/components/home/hero";
-import About from "@/components/home/about";
+import About from "@/components/home/impact";
 import Sponsors from "@/components/home/sponsors";
 import GetInvolved from "@/components/home/get-involved";
 import { Metadata } from "next";

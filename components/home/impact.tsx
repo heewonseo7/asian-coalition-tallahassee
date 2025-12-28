@@ -16,7 +16,7 @@ export default function About() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-foreground/60"></div>
+                <div className="absolute inset-0 bg-foreground/65"></div>
             </div>
             
             <div className="relative max-w-7xl mx-auto z-10">
